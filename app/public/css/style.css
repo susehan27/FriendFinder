@@ -1,0 +1,33 @@
+body {
+    background-color: #de842d;
+};
+
+.jumbotron {
+   margin: auto;
+}
+
+.vertical-center {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+.title {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 70px;
+}
+
+.subTitle {
+    font-family: 'Nixie One', cursive;
+    font-size: 30px;
+    
+}
+
+.badge {
+    margin: 3px;
+}
+
+.jumbotron-fluid {
+    background-color: white;
+}

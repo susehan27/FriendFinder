@@ -2,6 +2,12 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+// var fonts = require("google-fonts");
+
+// fonts.add({
+//     "Caveat": true,
+//     "Nixie One": true
+// });
 
 //express app setup
 var app = express();
@@ -10,6 +16,8 @@ var PORT = process.env.PORT || 3000;
 //express app setup for data parsing handling
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+//setup for external css file
+app.use(express.static("app/public"));
 
 //array for storing data results from app form
 var friends = [
@@ -90,6 +98,7 @@ var friends = [
     }
 ];
 
+
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "app/public/home.html"));
 });
@@ -129,7 +138,7 @@ app.post("/api/friends", function(req, res) {
     };
     
     console.log(`Your Best Match: ${match}`);
-
+    
     friends.push(newfriend);
     res.json({match:match, matchImg: matchImg});
 
